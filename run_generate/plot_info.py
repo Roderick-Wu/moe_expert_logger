@@ -23,10 +23,11 @@ def plot_usage(log_file):
     plt.xlabel("Expert ID")
     plt.ylabel("Selection Count")
     plt.title("MoE Expert Usage Histogram")
-    plt.xticks(experts)
+    plt.xticks(experts, fontsize=7, rotation=90, ha='center')
     plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
     plt.savefig("expert_hist.png")
     print("Histogram saved to expert_hist.png")
 
 if __name__ == "__main__":
-    plot_usage("vllm_moe_log.jsonl")
+    plot_usage("data_hooked/vllm_moe_log.jsonl")
