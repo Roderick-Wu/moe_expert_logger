@@ -66,6 +66,36 @@ cd vllm
 pip install -e .
 ```
 
+Also, I kept kept models and datasets stored locally as such:
+```
+models
+└── Qwen1.5-MoE-A2.7B-Chat
+    ├── config.json
+    ├── configuration.json
+    ├── generation_config.json
+    ├── LICENSE
+    ├── merges.txt
+    ├── model-00001-of-00008.safetensors
+    ├── model-00002-of-00008.safetensors
+    ├── model-00003-of-00008.safetensors
+    ├── model-00004-of-00008.safetensors
+    ├── model-00005-of-00008.safetensors
+    ├── model-00006-of-00008.safetensors
+    ├── model-00007-of-00008.safetensors
+    ├── model-00008-of-00008.safetensors
+    ├── model.safetensors.index.json
+    ├── README.md
+    ├── tokenizer_config.json
+    ├── tokenizer.json
+    └── vocab.json
+datasets/
+└── gsm8k_main
+    └── main
+        ├── test-00000-of-00001.parquet
+        └── train-00000-of-00001.parquet
+```
+If your setup is different you will have to modify paths in the `run_generate.py` script
+
 ### AI Usage
 
 I used AI for reading most of the long vLLM error outputs. It was useful for quickly identifying where errors were occuring (especially when I was trying to figure it out on CPU). For coding, I used it to generate the script to plot the .jsonl output (`./run_generate/plot_info.py`). The script is small and very quick to run, verify, and debug. 
