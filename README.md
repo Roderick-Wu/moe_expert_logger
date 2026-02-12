@@ -102,9 +102,13 @@ I used AI for reading most of the long vLLM error outputs. It was useful for qui
 
 ### Results
 
-Generally very strange expert distributions; seems that all layers (at least the ones I tried) had a very skewed distribution. Most tokens had the same 4 top experts with same probabilities -- something with prefill tokens? If we ignore the top4 for each layer, the tokens are generally quite evenly distributed among the remaining experts.
+Generally very strange expert distributions; seems that all layers (at least the ones I tried) had a very skewed distribution. Most tokens had the same 4 top experts with same probabilities (different indices for different layers though). I suspect there's something about the prefill stage, since in the .jsonl files we can easily see the cause of this is that the first group of tokens all have identical top4_id and probabilities, but later tokens (presumably generated tokens) do not have this issue. If we ignore the top4 for each layer, the tokens are generally quite evenly distributed among the remaining experts. Middle-late layers seem to have higher entropy.
 
+Some distributions for some layers. 
 ![Layer 0](/run_generate/expert_hist_layer0.png)
 ![Layer 12](/run_generate/expert_hist_layer12.png)
 ![Layer 23](/run_generate/expert_hist_layer23.png)
+
+
+
 
