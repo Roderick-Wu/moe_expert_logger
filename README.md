@@ -74,7 +74,7 @@ I used AI for reading most of the long vLLM error outputs. It was useful for qui
 
 Generally very strange expert distributions; seems that all layers (at least the ones I tried) had a very skewed distribution. Most tokens had the same 4 top experts with same probabilities -- something with prefill tokens? If we ignore the top4 for each layer, the tokens are generally quite evenly distributed among the remaining experts.
 
-/run_generate/expert_hist_layer0.png
-/run_generate/expert_hist_layer12.png
-/run_generate/expert_hist_layer23.png
+[Layer 0](/run_generate/expert_hist_layer0.png)
+[Layer 12](/run_generate/expert_hist_layer12.png)
+[Layer 23](/run_generate/expert_hist_layer23.png)
 
