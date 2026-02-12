@@ -30,4 +30,4 @@ def plot_usage(log_file):
     print("Histogram saved to expert_hist.png")
 
 if __name__ == "__main__":
-    plot_usage("data_hooked/vllm_moe_log.jsonl")
+    plot_usage("vllm_moe_log.jsonl")
